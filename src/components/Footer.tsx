@@ -67,15 +67,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-gray-400">
                 <FaMapMarkerAlt className="text-accent mt-1 flex-shrink-0" />
-                <span>123 Finance Plaza, Business District, City, Country</span>
+                <span>Addalaichenai</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400">
                 <FaPhone className="text-accent flex-shrink-0" />
-                <span>+1 (234) 567-890</span>
+                <span>+94 711762153</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400">
                 <FaEnvelope className="text-accent flex-shrink-0" />
-                <span>info@mnfinance.com</span>
+                <span>mnfinasso@gmail.com</span>
               </li>
             </ul>
             <div className="mt-8">
