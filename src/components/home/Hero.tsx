@@ -1,8 +1,26 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiArrowRight } from 'react-icons/hi';
 
 const Hero = () => {
+  const prefersReducedMotion = useReducedMotion();
+
+  const blobAnimation = prefersReducedMotion ? {} : { 
+    scale: [1, 1.2, 1],
+    x: [0, 100, 0],
+    y: [0, 50, 0]
+  };
+
+  const blobAnimation2 = prefersReducedMotion ? {} : { 
+    scale: [1, 1.3, 1],
+    x: [0, -80, 0],
+    y: [0, -100, 0]
+  };
+
+  const floatAnimation = prefersReducedMotion ? {} : { y: [0, -20, 0] };
+
+  const scrollAnimation = prefersReducedMotion ? {} : { y: [0, 10, 0] };
+
   return (
     <section className="relative min-h-[700px] lg:h-screen flex items-center overflow-hidden bg-primary">
       {/* Background Image with Overlay */}
@@ -16,40 +34,32 @@ const Hero = () => {
         
         {/* Liquid Glass Blobs */}
         <motion.div
-          animate={{ 
-            scale: [1, 1.2, 1],
-            x: [0, 100, 0],
-            y: [0, 50, 0]
-          }}
+          animate={blobAnimation}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary/20 rounded-full blur-[120px]"
         />
         <motion.div
-          animate={{ 
-            scale: [1, 1.3, 1],
-            x: [0, -80, 0],
-            y: [0, -100, 0]
-          }}
+          animate={blobAnimation2}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent/10 rounded-full blur-[150px]"
         />
       </div>
 
-      <div className="container-custom relative z-10 pt-32 lg:pt-20">
-        <div className="max-w-3xl">
+      <div className="container-custom relative z-10 pt-20 lg:pt-16">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold text-white leading-tight mb-6">
-              Empowering Businesses Through <span className="text-accent">Strategic Financial</span> Excellence
+              Empowering Business Through <span className="text-accent">Strategic Finance</span> &amp; Excellence
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
               Professional accounting, taxation, auditing, and business advisory solutions tailored for modern enterprises. Partner with experts who drive your growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="btn-secondary flex items-center justify-center space-x-2 px-8">
+              <Link to="/contact" className="bg-accent text-primary flex items-center justify-center space-x-2 px-8 py-3 rounded-md font-bold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl active:scale-95">
                 <span>Get Consultation</span>
                 <HiArrowRight />
               </Link>
@@ -63,12 +73,12 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="mt-16 flex items-center space-x-8"
+            className="mt-10 lg:mt-16 flex items-center space-x-8"
           >
             <div className="flex -space-x-4">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="w-12 h-12 rounded-full border-4 border-primary overflow-hidden">
-                  <img src={`https://i.pravatar.cc/150?u=${i + 10}`} alt="Client" className="w-full h-full object-cover" />
+                  <img src={`https://i.pravatar.cc/150?u=${i + 10}`} alt="Client avatar" loading="lazy" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -82,11 +92,11 @@ const Hero = () => {
 
       {/* Floating Elements */}
       <motion.div
-        animate={{ y: [0, -20, 0] }}
+        animate={floatAnimation}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-1/4 hidden lg:block"
+        className="absolute top-1/3 right-[5%] z-30 hidden lg:block"
       >
-        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl">
+        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl bg-clip-padding">
           <div className="flex items-center space-x-4 mb-4">
             <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
               <div className="w-5 h-5 bg-accent rounded-full"></div>
@@ -109,8 +119,9 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <motion.div
-        animate={{ y: [0, 10, 0] }}
+        animate={scrollAnimation}
         transition={{ duration: 2, repeat: Infinity }}
+        aria-hidden={true}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 hidden md:block"
       >
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">

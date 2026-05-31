@@ -48,7 +48,7 @@ const ServicesPreview = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block">Our Expertise</span>
           <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-6">Comprehensive Financial Solutions</h2>
-          <p className="text-gray-600 text-base lg:text-lg">
+          <p className="text-textSecondary text-base lg:text-lg">
             We provide a wide range of professional services designed to help your business thrive in today's complex financial landscape.
           </p>
         </div>
@@ -62,13 +62,13 @@ const ServicesPreview = () => {
               viewport={{ once: true }}
               transition={{ delay: service.delay, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="bg-light p-10 rounded-2xl border border-gray-100 hover:border-accent/30 hover:shadow-2xl transition-all duration-300 group"
+              className="bg-light p-10 rounded-2xl border border-border hover:border-accent/30 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary text-3xl mb-8 shadow-sm group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                 {service.icon}
               </div>
               <h3 className="text-2xl font-bold text-primary mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-textSecondary mb-8 leading-relaxed">
                 {service.description}
               </p>
               <Link to="/services" className="text-secondary font-bold flex items-center space-x-2 group-hover:text-accent transition-colors">

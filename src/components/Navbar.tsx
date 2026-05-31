@@ -33,14 +33,14 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100 py-3' 
+          ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-border py-3' 
           : 'bg-white lg:bg-transparent py-4 lg:py-6 shadow-md lg:shadow-none'
       }`}
     >
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 group">
           <div className="w-10 h-10 flex items-center justify-center rounded-xl">
-            <img src="/logo.svg" alt="MN Finance" className="w-10 h-10" />
+            <img src="/logo.svg" alt="MN Finance" loading="lazy" className="w-10 h-10" />
           </div>
           <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-primary lg:text-white'}`}>
             MN Finance <span className="text-accent font-medium">Associates</span>
@@ -84,7 +84,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white border-t border-border overflow-hidden"
           >
             <div className="container-custom py-6 flex flex-col space-y-4">
               {navLinks.map((link) => (

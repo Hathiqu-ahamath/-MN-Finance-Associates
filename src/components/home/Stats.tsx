@@ -39,7 +39,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="bg-white py-16 border-b border-gray-100">
+    <section className="bg-white section-padding border-b border-border">
       <div className="container-custom">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -54,7 +54,7 @@ const Stats = () => {
               <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </h3>
-              <p className="text-gray-500 text-xs sm:text-sm lg:text-base font-medium">{stat.label}</p>
+              <p className="text-textSecondary text-xs sm:text-sm lg:text-base font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </div>

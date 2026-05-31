@@ -19,7 +19,7 @@ const Industries = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block">Industries We Serve</span>
           <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-6">Expertise Across Sectors</h2>
-          <p className="text-gray-600 text-base lg:text-lg">
+          <p className="text-textSecondary text-base lg:text-lg">
             We provide specialized financial solutions tailored to the unique challenges and opportunities of various industries.
           </p>
         </div>
@@ -33,14 +33,16 @@ const Industries = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               whileHover={{ y: -5 }}
-              className="bg-light p-6 sm:p-8 rounded-2xl flex flex-col items-center justify-center space-y-4 transition-all duration-300 group cursor-default relative overflow-hidden h-44 sm:h-56"
+              tabIndex={0}
+              onFocus={() => {}}
+              className="bg-light p-6 sm:p-8 rounded-2xl flex flex-col items-center justify-center space-y-4 transition-all duration-300 group cursor-default relative overflow-hidden h-44 sm:h-56 focus:outline-none focus:ring-2 focus:ring-accent"
             >
               <div className="text-3xl sm:text-4xl text-secondary group-hover:scale-110 group-hover:text-accent transition-all duration-300">
                 {industry.icon}
               </div>
               <h3 className="font-bold text-base sm:text-xl text-primary transition-colors group-hover:text-primary">{industry.name}</h3>
               
-              <div className="absolute inset-0 bg-primary/95 p-4 sm:p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-primary/95 p-4 sm:p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300">
                 <p className="text-white text-xs sm:text-sm font-medium leading-relaxed">
                   {industry.snippet}
                 </p>

@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg">
-                <img src="/logo.svg" alt="MN Finance" className="w-10 h-10" />
+                <img src="/logo.svg" alt="MN Finance" loading="lazy" className="w-10 h-10" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
                 MN Finance <span className="text-accent font-medium">Associates</span>
@@ -22,16 +22,16 @@ const Footer = () => {
               Providing world-class financial consulting, accounting, and business advisory solutions tailored for modern enterprises and corporate excellence.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
                 <FaLinkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
                 <FaTwitter size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
                 <FaFacebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-300">
                 <FaInstagram size={18} />
               </a>
             </div>
@@ -80,13 +80,16 @@ const Footer = () => {
             </ul>
             <div className="mt-8">
               <h4 className="font-bold mb-4">Newsletter</h4>
-              <form className="flex">
+              <form className="flex" onSubmit={(e) => e.preventDefault()}>
+                <label htmlFor="newsletter-email" className="sr-only">Email Address</label>
                 <input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Your Email"
+                  required
                   className="bg-gray-800 text-white px-4 py-2 rounded-l-md focus:outline-none w-full border border-gray-700 focus:border-accent"
                 />
-                <button className="bg-accent text-primary px-4 py-2 rounded-r-md font-bold hover:bg-opacity-90 transition-all">
+                <button type="submit" aria-label="Subscribe to Newsletter" className="bg-accent text-primary px-4 py-2 rounded-r-md font-bold hover:bg-opacity-90 transition-all">
                   Join
                 </button>
               </form>

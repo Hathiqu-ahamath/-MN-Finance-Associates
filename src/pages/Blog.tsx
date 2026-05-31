@@ -41,7 +41,7 @@ const Blog = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           {/* Search and Filter Bar */}
-          <div className="flex flex-col lg:flex-row justify-between items-center mb-16 gap-8 bg-light p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm">
+          <div className="flex flex-col lg:flex-row justify-between items-center mb-16 gap-8 bg-light p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm">
             <div className="relative w-full lg:w-96">
               <HiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
               <input 
@@ -49,7 +49,7 @@ const Blog = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:outline-none transition-all text-sm sm:text-base"
+                className="w-full pl-12 pr-4 py-3 rounded-xl border border-border focus:border-accent focus:outline-none transition-all text-sm sm:text-base"
               />
             </div>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-end w-full lg:w-auto">
@@ -60,7 +60,7 @@ const Blog = () => {
                   className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
                     selectedCategory === cat 
                       ? 'bg-primary text-white shadow-lg' 
-                      : 'bg-white text-gray-500 hover:bg-gray-100'
+                      : 'bg-white text-textSecondary hover:bg-gray-100'
                   }`}
                 >
                   {cat}
@@ -69,6 +69,7 @@ const Blog = () => {
             </div>
           </div>
 
+          <h2 className="text-2xl font-bold text-primary mb-8">Latest Insights</h2>
           {/* Results Grid */}
           {filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -81,12 +82,13 @@ const Blog = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all"
+                    className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-2xl transition-all"
                   >
                     <div className="relative overflow-hidden aspect-[16/10]">
                       <img 
                         src={post.image} 
                         alt={post.title} 
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute top-4 left-4">
@@ -105,7 +107,7 @@ const Blog = () => {
                       <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors leading-tight">
                         <Link to={`/blog/${post.id}`}>{post.title}</Link>
                       </h3>
-                      <p className="text-gray-500 mb-8 line-clamp-3 text-sm leading-relaxed">
+                      <p className="text-textSecondary mb-8 line-clamp-3 text-sm leading-relaxed">
                         {post.excerpt}
                       </p>
                       <div className="mt-auto pt-6 border-t border-gray-50 flex justify-between items-center">
@@ -113,7 +115,7 @@ const Blog = () => {
                           <div className="w-8 h-8 rounded-full bg-light flex items-center justify-center text-xs font-bold text-primary">
                             {post.author[0]}
                           </div>
-                          <span className="text-xs font-bold text-gray-500">{post.author}</span>
+                          <span className="text-xs font-bold text-textSecondary">{post.author}</span>
                         </div>
                         <Link to={`/blog/${post.id}`} className="text-secondary group-hover:text-accent transition-colors">
                           <HiOutlineArrowRight size={20} />
@@ -127,7 +129,7 @@ const Blog = () => {
           ) : (
             <div className="text-center py-20">
               <h3 className="text-2xl font-bold text-primary mb-4">No articles found</h3>
-              <p className="text-gray-500">Try adjusting your search or category filters.</p>
+              <p className="text-textSecondary">Try adjusting your search or category filters.</p>
               <button 
                 onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
                 className="mt-8 text-secondary font-bold hover:text-accent underline"

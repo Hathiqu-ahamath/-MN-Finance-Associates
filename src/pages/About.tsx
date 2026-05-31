@@ -73,13 +73,13 @@ const About = () => {
               <div className="space-y-8">
                 <div className="bg-light p-6 lg:p-8 rounded-2xl border-l-4 border-accent">
                   <h3 className="text-xl lg:text-2xl font-bold text-primary mb-4">Our Mission</h3>
-                  <p className="text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p className="text-textSecondary text-sm lg:text-base leading-relaxed">
                     To provide unparalleled financial consulting and business advisory services that enable our clients to achieve sustainable growth and maintain absolute regulatory compliance in an ever-evolving global market.
                   </p>
                 </div>
                 <div className="bg-light p-6 lg:p-8 rounded-2xl border-l-4 border-secondary">
                   <h3 className="text-xl lg:text-2xl font-bold text-primary mb-4">Our Vision</h3>
-                  <p className="text-gray-600 text-sm lg:text-base leading-relaxed">
+                  <p className="text-textSecondary text-sm lg:text-base leading-relaxed">
                     To be the most trusted and influential financial partner for corporate enterprises worldwide, recognized for our integrity, expertise, and commitment to driving financial excellence.
                   </p>
                 </div>
@@ -94,6 +94,7 @@ const About = () => {
               <img 
                 src="https://images.unsplash.com/photo-1522071823991-b9671f30c46f?auto=format&fit=crop&q=80" 
                 alt="Working together" 
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -106,7 +107,7 @@ const About = () => {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">Our Core Values</h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-textSecondary text-lg">
               The principles that guide our work and define our relationship with every client.
             </p>
           </div>
@@ -124,7 +125,7 @@ const About = () => {
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-4">{value.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{value.description}</p>
+                <p className="text-textSecondary leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -136,7 +137,7 @@ const About = () => {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">Our Leadership Team</h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-textSecondary text-lg">
               Meet the experts who lead our firm and ensure the success of our clients.
             </p>
           </div>
@@ -154,6 +155,7 @@ const About = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
+                    loading="lazy"
                     className="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

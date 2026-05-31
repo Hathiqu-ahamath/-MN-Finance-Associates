@@ -106,7 +106,7 @@ const Services = () => {
 
                 <div className="hidden lg:block mt-12 p-8 bg-accent/10 rounded-3xl border border-accent/20">
                   <h4 className="text-primary font-bold mb-4">Need a Custom Quote?</h4>
-                  <p className="text-gray-600 text-sm mb-6">Our experts are ready to design a personalized strategy for your business.</p>
+                  <p className="text-textSecondary text-sm mb-6">Our experts are ready to design a personalized strategy for your business.</p>
                   <Link to="/contact" className="btn-primary w-full text-center py-3">
                     Contact Us
                   </Link>
@@ -129,6 +129,7 @@ const Services = () => {
                     <img 
                       src={activeService.image} 
                       alt={activeService.title} 
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-8">
@@ -138,13 +139,13 @@ const Services = () => {
 
                   <div>
                     <h2 className="text-2xl lg:text-4xl font-bold text-primary mb-6">{activeService.title}</h2>
-                    <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-10">
+                    <p className="text-textSecondary text-base lg:text-lg leading-relaxed mb-10">
                       {activeService.description}
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {activeService.benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-start space-x-3 p-6 bg-light rounded-2xl border border-gray-100 hover:border-accent/30 transition-colors">
+                        <div key={index} className="flex items-start space-x-3 p-6 bg-light rounded-2xl border border-border hover:border-accent/30 transition-colors">
                           <div className="w-6 h-6 bg-accent text-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                             <HiChevronRight />
                           </div>
@@ -178,7 +179,7 @@ const Services = () => {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-primary mb-6">Our Service Excellence</h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-textSecondary text-lg">
               We follow a rigorous methodology to ensure the highest standards of delivery and client satisfaction.
             </p>
           </div>
@@ -190,7 +191,7 @@ const Services = () => {
             ].map((item, index) => (
               <div key={index} className="space-y-4 p-8 bg-white rounded-2xl shadow-sm border border-gray-50">
                 <h4 className="text-xl font-bold text-secondary">{item.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-textSecondary text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

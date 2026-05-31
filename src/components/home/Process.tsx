@@ -30,7 +30,7 @@ const Process = () => {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-accent font-bold tracking-wider uppercase text-sm mb-4 block">Our Process</span>
           <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-6">How We Work</h2>
-          <p className="text-gray-600 text-base lg:text-lg">
+          <p className="text-textSecondary text-base lg:text-lg">
             A systematic and transparent approach to delivering financial excellence for your business.
           </p>
         </div>
@@ -53,7 +53,7 @@ const Process = () => {
                   {step.number}
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-4">{step.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-sm">
+                <p className="text-textSecondary leading-relaxed text-sm">
                   {step.description}
                 </p>
                 

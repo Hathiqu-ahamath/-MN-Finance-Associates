@@ -64,12 +64,13 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative"
+            className="relative overflow-hidden"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <img
                 src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80"
                 alt="Working together"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>

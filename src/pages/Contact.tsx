@@ -33,7 +33,7 @@ const Contact = () => {
             <div className="lg:col-span-1 space-y-10">
               <div>
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <p className="text-textSecondary mb-8 leading-relaxed">
                   Reach out to us via any of the following channels. We aim to respond to all inquiries within 24 business hours.
                 </p>
               </div>
@@ -59,7 +59,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-bold text-primary mb-1">{item.title}</h4>
                       {item.details.map((detail, dIdx) => (
-                        <p key={dIdx} className="text-gray-500 text-sm leading-relaxed">{detail}</p>
+                        <p key={dIdx} className="text-textSecondary text-sm leading-relaxed">{detail}</p>
                       ))}
                     </div>
                   </motion.div>
@@ -69,7 +69,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-2xl border border-gray-100 relative overflow-hidden">
+              <div className="bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-2xl border border-border relative overflow-hidden">
                 <AnimatePresence mode="wait">
                   {formStatus === 'success' ? (
                     <motion.div 
@@ -83,7 +83,7 @@ const Contact = () => {
                         <FaCheckCircle />
                       </div>
                       <h3 className="text-3xl font-bold text-primary mb-4">Message Sent!</h3>
-                      <p className="text-gray-600 max-w-sm mx-auto">
+                      <p className="text-textSecondary max-w-sm mx-auto">
                         Thank you for reaching out. One of our financial experts will contact you shortly.
                       </p>
                       <button 
@@ -103,7 +103,7 @@ const Contact = () => {
                             required
                             type="text" 
                             placeholder="John Doe"
-                            className="w-full px-5 py-4 rounded-xl border border-gray-100 focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all"
+                            className="w-full px-5 py-4 rounded-xl border border-border focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all"
                           />
                         </div>
                         <div className="space-y-2">
@@ -112,7 +112,7 @@ const Contact = () => {
                             required
                             type="email" 
                             placeholder="john@example.com"
-                            className="w-full px-5 py-4 rounded-xl border border-gray-100 focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all"
+                            className="w-full px-5 py-4 rounded-xl border border-border focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all"
                           />
                         </div>
                         <div className="space-y-2">
@@ -120,12 +120,12 @@ const Contact = () => {
                           <input 
                             type="tel" 
                             placeholder="+1 (234) 567-890"
-                            className="w-full px-5 py-4 rounded-xl border border-gray-100 focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all"
+                            className="w-full px-5 py-4 rounded-xl border border-border focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all"
                           />
                         </div>
                         <div className="space-y-2">
                           <label className="text-sm font-bold text-primary ml-1">Inquiry Type</label>
-                          <select className="w-full px-5 py-4 rounded-xl border border-gray-100 focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all appearance-none cursor-pointer">
+                          <select className="w-full px-5 py-4 rounded-xl border border-border focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all appearance-none cursor-pointer">
                             <option>General Inquiry</option>
                             <option>Tax Consultancy</option>
                             <option>Audit Support</option>
@@ -139,7 +139,7 @@ const Contact = () => {
                             required
                             rows={5}
                             placeholder="How can we help your business thrive?"
-                            className="w-full px-5 py-4 rounded-xl border border-gray-100 focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all resize-none"
+                            className="w-full px-5 py-4 rounded-xl border border-border focus:border-accent focus:ring-4 focus:ring-accent/5 focus:outline-none bg-light transition-all resize-none"
                           ></textarea>
                         </div>
                         <div className="md:col-span-2 mt-4">
@@ -173,7 +173,8 @@ const Contact = () => {
         <div className="absolute inset-0 grayscale contrast-125 opacity-70 group-hover:opacity-100 transition-opacity duration-700">
           <img 
             src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80" 
-            alt="Map" 
+            alt="Map location" 
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>
@@ -189,7 +190,7 @@ const Contact = () => {
               <FaMapMarkerAlt />
             </div>
             <h4 className="text-2xl font-bold text-primary mb-2">MN Headquarters</h4>
-            <p className="text-gray-600 text-sm mb-6">123 Finance Plaza, Business District, City, Country</p>
+            <p className="text-textSecondary text-sm mb-6">123 Finance Plaza, Business District, City, Country</p>
             <a 
               href="https://maps.google.com" 
               target="_blank" 

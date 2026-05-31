@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply font-sans text-textPrimary bg-background;
   }

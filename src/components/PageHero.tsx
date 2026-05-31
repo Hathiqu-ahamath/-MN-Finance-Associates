@@ -14,6 +14,7 @@ const PageHero = ({ title, subtitle, image }: PageHeroProps) => {
         <img
           src={image || "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"}
           alt={title}
+          loading="lazy"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>

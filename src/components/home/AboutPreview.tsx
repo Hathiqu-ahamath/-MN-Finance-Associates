@@ -12,12 +12,13 @@ const AboutPreview = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative overflow-hidden"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
                 alt="Our Team"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -26,7 +27,7 @@ const AboutPreview = () => {
             
             <div className="absolute bottom-10 left-10 bg-white p-6 rounded-xl shadow-xl z-20">
               <p className="text-primary font-bold text-2xl">15+ Years</p>
-              <p className="text-gray-500 text-sm">Of Financial Excellence</p>
+              <p className="text-textSecondary text-sm">Of Financial Excellence</p>
             </div>
           </motion.div>
 
@@ -40,7 +41,7 @@ const AboutPreview = () => {
             <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
               Leading the Way in <span className="text-secondary">Corporate Financial</span> Strategy
             </h2>
-            <p className="text-gray-600 mb-8 text-base lg:text-lg leading-relaxed">
+            <p className="text-textSecondary mb-8 text-base lg:text-lg leading-relaxed">
               MN Finance Associates is a premier financial consulting firm dedicated to providing comprehensive accounting, taxation, and business advisory services. We empower enterprises with strategic insights and compliant financial frameworks.
             </p>
             
@@ -64,11 +65,11 @@ const AboutPreview = () => {
               </Link>
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden border-2 border-accent">
-                  <img src="https://i.pravatar.cc/150?u=ceo" alt="CEO" />
+                  <img src="https://i.pravatar.cc/150?u=ceo" alt="CEO portrait" loading="lazy" />
                 </div>
                 <div>
                   <p className="text-primary font-bold leading-none text-sm lg:text-base">Michael N. Thompson</p>
-                  <p className="text-gray-500 text-xs">Managing Partner</p>
+                  <p className="text-textSecondary text-xs">Managing Partner</p>
                 </div>
               </div>
             </div>
